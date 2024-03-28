@@ -44,10 +44,10 @@ class CollisionsGeometric{
         let ca = new Vector2(circle2.centerX, circle2.centerY).getSubtract(line2.one);
         let dotProduct = ba.getDot(ca);
         let scaledBA = ba.getScaled(dotProduct);
-        let infiniteLinePoint = ba.getAdd(scaledBA);
-        if(scaledBA < 0)
+        let infiniteLinePoint = line2.one.getAdd(scaledBA);
+        if(dotProduct < 0)
             infiniteLinePoint = line2.one
-        if(scaledBA > baUnnormalized.getLength())
+        if(dotProduct > baUnnormalized.getLength())
             infiniteLinePoint = line2.two
 
         let step3Result = CollisionsGeometric.isVector2Circle2Collision(infiniteLinePoint, circle2)

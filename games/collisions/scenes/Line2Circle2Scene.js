@@ -1,6 +1,7 @@
 import "../components/FollowMouseComponent.js"
 import "../components/CheckCollisionsComponentCircle_Circle.js"
-import "../components/CheckCollisionsComponentRectangle_Rectangle.js"
+import "../components/CheckCollisionsComponentCircle_Rectangle.js"
+import "../components/CheckCollisionsComponentCircle_Line.js"
 
 class Line2Circle2Scene extends Scene {
   constructor() {
@@ -23,14 +24,14 @@ class Line2Circle2Scene extends Scene {
     //A rectangle against which we will do collision detection
     let collisionRectangleGameObject = new GameObject("CollisionRectangleGameObject")
     collisionRectangleGameObject.addComponent(new Rectangle("green", "transparent"))
-    collisionRectangleGameObject.addComponent(new CheckCollisionsComponentRectangle_Rectangle())
+    collisionRectangleGameObject.addComponent(new CheckCollisionsComponentCircle_Rectangle())
     this.gameObjects.push(collisionRectangleGameObject);
     GameObject.instantiate(collisionRectangleGameObject, 200, 200, 20, 30)
 
     //A rectangle against which we will do collision detection
     let collisionLineGameObject = new GameObject("CollisionLineGameObject")
     collisionLineGameObject.addComponent(new Line(new Vector2(0,0), new Vector2(100,50), "green"))
-    // collisionLineGameObject.addComponent(new CheckCollisionsComponentRectangle_Rectangle())
+    collisionLineGameObject.addComponent(new CheckCollisionsComponentCircle_Line())
     GameObject.instantiate(collisionLineGameObject);
   }
 

@@ -92,6 +92,10 @@ class GameObject {
         }
     }
 
+    getComponent(name){
+        return this.components.find(c=>c.constructor.name == name);
+    }
+
     /**
      * Find the first game object in the scene whose name matches the given string.
      * 

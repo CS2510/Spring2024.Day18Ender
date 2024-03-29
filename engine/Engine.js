@@ -8,6 +8,7 @@ import "/engine/geometry/Rectangle2.js"
 import "/engine/geometry/Circle2.js"
 
 import "/engine/components/Circle.js"
+import "/engine/components/Line.js"
 import "/engine/components/Point.js"
 import "/engine/components/Rectangle.js"
 import "/engine/components/Text.js"

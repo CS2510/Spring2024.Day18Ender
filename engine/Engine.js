@@ -50,6 +50,9 @@ class Engine {
       }
     }
 
+    //Draw in world space
+    Engine.currentScene.draw(ctx)
+
     if (!Engine.isSystemPaused) {
 
       //Call start on game objects that haven't been started
@@ -66,8 +69,7 @@ class Engine {
     //Update the input
     Input.update();
 
-    //Draw in world space
-    Engine.currentScene.draw(ctx)
+    
 
     //Draw in Screen/UI space
     //currentScene.drawUI(ctx)

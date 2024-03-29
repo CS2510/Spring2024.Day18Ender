@@ -16,6 +16,9 @@ class Rectangle extends Component {
     ctx.fill();
     ctx.stroke()
   }
+  asGeometry(){
+    return new Rectangle2(this.transform.x, this.transform.y, this.transform.scaleX, this.transform.scaleY);
+  }
 }
 
 window.Rectangle = Rectangle

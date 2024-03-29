@@ -11,6 +11,9 @@ class Line extends Component{
     ctx.lineTo(this.two.x, this.two.y);
     ctx.stroke();
   }
+  asGeometry(){
+    return new Line2(this.one, this.two);
+  }
 }
 
 window.Line = Line;
